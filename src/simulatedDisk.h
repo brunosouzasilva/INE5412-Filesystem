@@ -16,8 +16,8 @@
  */
 class SimulatedDisk: public Disk {
 public:
-    SimulatedDisk();
-public:
+    SimulatedDisk(const unsigned int blocksize, blockNumber maxBlocks);
+    
 private:           
     DiskBlock diskBlocks[];
 };

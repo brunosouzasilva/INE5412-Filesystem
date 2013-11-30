@@ -24,7 +24,7 @@ public:
     /**
      * Save structures in ram into disk
      */
-    void flush();
+    void flush(DiskBlock diskBlocks[]);
     /**
      * Writes a block @param block into RAM structures
      * @param bn The number of the block to be written
