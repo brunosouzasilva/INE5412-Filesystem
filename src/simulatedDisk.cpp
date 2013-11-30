@@ -1,4 +1,3 @@
-#include "simulatedDisk.h"
 #include "diskBlock.h"
 
 //FIXME
