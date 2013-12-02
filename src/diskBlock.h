@@ -8,6 +8,12 @@
  */
 class DiskBlock {
 public:
+
+	/**
+	 * The block's number in disk
+	 */
+	typedef unsigned int number;
+
     /**
      * Creates a new block that resides on memory, allocating the specified number of bytes
      * @param blocksize Number of bytes to allocate to the DiskBlock
