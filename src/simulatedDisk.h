@@ -1,26 +1,33 @@
-/* 
- * File:   simulatedDisk.h
- * Author: cancian
- *
- * Created on 22 November 2013, 15:00
- */
-
 #ifndef SIMULATEDDISK_H
 #define	SIMULATEDDISK_H
 
-#include <config.h>
+#include "storage.h"
+#include "diskBlock.h"
 
 /**
- * Implementation of abstract class @class Disk that represents a simulated disk. 
- * This implementation simulates a disk by using a simple file in the real HD of this machine.
+ * Implementation of abstract class @class Storage that represents a
+ * simulated disk.
+ *
+ * This implementation simulates a disk by using a simple file in the
+ * real HD of this machine.
+ *
+ * @param filename Name of the file to be used to simulate the disk.
  */
-class SimulatedDisk: public Disk {
+class SimulatedDisk: public Storage {
 public:
-    SimulatedDisk(const unsigned int blocksize, blockNumber maxBlocks);
-    
-private:           
-    DiskBlock diskBlocks[];
+
+    SimulatedDisk(const char* fileName, const unsigned int blockSize, DiskBlock::number maxBlocks);
+
+    virtual void flush() override;
+    virtual void writeBlock(DiskBlock::number n, DiskBlock * block_buffer) override;
+    virtual DiskBlock * readBlock(DiskBlock::number n) override;
+    virtual unsigned int getBlockSize() override;
+    virtual unsigned int getMaxBlocks() override;
+
+private:
+
+    /** Name of the file used to simulate the disk. */
+    char *fileName;
 };
 
 #endif	/* SIMULATEDDISK_H */
-
