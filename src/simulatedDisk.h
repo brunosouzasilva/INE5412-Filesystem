@@ -8,7 +8,7 @@
 #ifndef SIMULATEDDISK_H
 #define	SIMULATEDDISK_H
 
-#include<config.h>
+#include <config.h>
 
 /**
  * Implementation of abstract class @class Disk that represents a simulated disk. 

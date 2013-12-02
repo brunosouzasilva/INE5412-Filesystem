@@ -6,7 +6,7 @@
  */
 
 #include <cstdlib>
-#include "ine5412_ClassWork.h"
+#include "INE5412Filesystem.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    INE5412_ClassWork os1 = new INE5412_ClassWork();
+    INE5412Filesystem os1 = new INE5412Filesystem();
     os1.useFileSystem();
     
     return 0;

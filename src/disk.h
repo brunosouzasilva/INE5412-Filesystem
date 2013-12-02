@@ -30,7 +30,7 @@ public:
      * @param bn The number of the block to be written
      * @param block A pointer to the disk block.
      */
-    void writeBlock(const blockNumber bn, const DiskBlock* block);
+    void writeBlock(const blockNumber bn, DiskBlock* block);
     
     /**
      * Reads a block @param block 

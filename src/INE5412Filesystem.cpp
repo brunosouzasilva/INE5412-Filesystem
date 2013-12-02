@@ -1,10 +1,10 @@
 #include "INE5412Filesystem.h"
 
-INE5412_ClassWork::INE5412_ClassWork() {
+INE5412Filesystem::INE5412Filesystem() {
     createFileSystem();
 }
 
-void INE5412_ClassWork::useFileSystem() {
+void INE5412Filesystem::useFileSystem() {
     fs.API.format();
     fileIdentifier fread = fs.API.createfile("/readme.txt", 0);
     fileIdentifier fboot = fs.API.createfile("/boot.dat", 0);
@@ -13,7 +13,7 @@ void INE5412_ClassWork::useFileSystem() {
     
 }
 
-void INE5412_ClassWork::createFileSystem() {
+void INE5412Filesystem::createFileSystem() {
     // create File System components
     Disk* disk = new SimulatedDisk(1024, 2048); // a disk with 2048 blocks of 1024 bytes each = 2^11.2^10=2^21 bytes = 2MB
     DiskSpaceManager* bitmap = new Bitmap(disk);

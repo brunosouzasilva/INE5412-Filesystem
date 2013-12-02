@@ -21,7 +21,7 @@ void Disk::Disk(const unsigned int blocksize, blockNumber maxBlocks) {
 void Disk::flush(DiskBlock diskBlocks[]) {
     
     for(int blockIdx=0; blockIdx < maxBlocks; blockIdx++) {
-        diskBlocks[blockIdx].writeBytes(baseAddress + (blockNumber * blocksize), blocksize, 0);
+        diskBlocks[blockIdx].writeBytes((unsigned short) (baseAddress + (blockNumber * blocksize)), (unsigned short) blocksize, 0);
     }
 }
 
@@ -30,11 +30,12 @@ void Disk::flush(DiskBlock diskBlocks[]) {
 // um private member : rawData
 // por enquanto passo 0
 void Disk::readBlock(const blockNumber bn, DiskBlock* block) {
-    block->readBytes(baseAddress + (blockNumber * blocksize), blocksize, 0);
+    block->readBytes((unsigned short) (baseAddress + (blockNumber * blocksize)), (unsigned short) blocksize, 0);
 }
+
 //FIXME
-void Disk::writeBlock(const blockNumber bn, const DiskBlock* block) {
-    block->readBytes(baseAddress + (blockNumber * blocksize), blocksize, 0);
+void Disk::writeBlock(const blockNumber bn, DiskBlock* block) {
+	block->readBytes((unsigned short) (baseAddress + (blockNumber * blocksize)), (unsigned short) blocksize, 0);
 }
 
 void Disk::setBlockSize(const unsigned int blocksize) {
@@ -45,10 +46,10 @@ void Disk::setMaxBlocks(const blockNumber maxBlocks) {
     this->maxBlocks = maxBlocks;
 }
 
-int Disk::getBlockSize() {
+unsigned int Disk::getBlockSize() {
     return blocksize;
 }
 
-int Disk::getMaxBlocks() {
+unsigned int Disk::getMaxBlocks() {
     return maxBlocks;
 }

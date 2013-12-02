@@ -1,11 +1,4 @@
-/* 
- * File:   operatingSystem1_FileSystemDevelopmentClassWork.h
- * Author: cancian
- *
- * Created on 23 November 2013, 12:04
- */
-
-#ifndef INE5412_CLASSWORK_H
+#ifndef INE5412Filesystem_H
 #define	INE5412Filesystem_H
 
 #include "fileSystem.h"
@@ -28,5 +21,4 @@ private:
     FileSystem fs;
 };
 
-#endif	/* INE5412_CLASSWORK_H */
-
+#endif	/* INE5412Filesystem_H */
