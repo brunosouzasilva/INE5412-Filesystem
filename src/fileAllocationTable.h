@@ -14,7 +14,7 @@
 
 class FileAllocationTable {
 public:
-    FileAllocationTable(Disk* disk);
+    FileAllocationTable(Storage* disk);
 public:
     void addFileEntry(FileAllocationEntry fatEntry);
     void removeFileEntryByNode(fileIdentifier inode);
@@ -23,7 +23,7 @@ public:
     FileAllocationEntry getFileEntryByRank(unsigned int rank);
     void setFileEntry(unsigned int rank, FileAllocationEntry fatEntry);
 private:
-    Disk* disk;
+    Storage* disk;
 };
 
 #endif	/* FILEALLOCATIONTABLE_H */

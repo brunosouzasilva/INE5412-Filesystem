@@ -15,7 +15,7 @@
  */
 class FileAllocator {
 public:
-    FileAllocator(Disk* disk, FileAllocationTable* fat);
+    FileAllocator(Storage* disk, FileAllocationTable* fat);
 public:
     void createFile();
     void removeFile(const unsigned char* path);
@@ -29,7 +29,7 @@ public:
     void seek(const unsigned long numByte);
 private:
 private:
-    Disk* disk;
+    Storage* disk;
     FileAllocationTable* fat;
 };
 

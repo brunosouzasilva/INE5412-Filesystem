@@ -14,14 +14,14 @@
  */
 class DiskSpaceManager {
 public:
-    DiskSpaceManager(Disk* disk);
+    DiskSpaceManager(Storage* disk);
 public:
     unsigned long getTotalSpace();
     unsigned long getFreeSpace();
-    blockNumber allocBlock();
-    void deallocBlock(blockNumber block);
+    DiskBlock::number allocBlock();
+    void deallocBlock(DiskBlock::number block);
 private:
-    Disk* disk;
+    Storage* disk;
 };
 
 #endif	/* DISKSPACEMANAGER_H */

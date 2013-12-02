@@ -15,7 +15,7 @@ void INE5412Filesystem::useFileSystem() {
 
 void INE5412Filesystem::createFileSystem() {
     // create File System components
-    Disk* disk = new SimulatedDisk(1024, 2048); // a disk with 2048 blocks of 1024 bytes each = 2^11.2^10=2^21 bytes = 2MB
+    Storage* disk = new SimulatedDisk(1024, 2048); // a disk with 2048 blocks of 1024 bytes each = 2^11.2^10=2^21 bytes = 2MB
     DiskSpaceManager* bitmap = new Bitmap(disk);
     FileAllocationTable* fat = new FileAllocationTable(disk);
     FileAllocator* allocator = new IndexedFileAllocator(disk);

@@ -15,24 +15,24 @@
  */
 class Bitmap: public DiskSpaceManager {
 public:
-    BitMap(Disk* disk);
+    BitMap(Storage* disk);
 public:
     /**
      * return true if block @param blockNum is actually occupied (allocated)
      */
-    bool isBlockAllocated(const blockNumber blockNum);
+    bool isBlockAllocated(const DiskBlock::number blockNum);
     /**
      * set the block @param blockNum to occupied (allocated) if @param allocated is true, or set it to free otherwise 
      */
-    void setBlockAllocated(const blockNumber blockNum, const bool allocated);
+    void setBlockAllocated(const DiskBlock::number blockNum, const bool allocated);
 
     /**
      * allocate one block using some criteria, and returns the number of the allocated block. Returns an invalid number if no free block exists
      * @return 
      */
-    blockNumber allocateBlock();
+    DiskBlock::number allocateBlock();
 private:
-    Disk* disk;
+    Storage* disk;
 };
 
 #endif	/* BITMAP_H */

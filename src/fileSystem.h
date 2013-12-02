@@ -8,7 +8,7 @@
 #ifndef FILESYSTEM_H
 #define	FILESYSTEM_H
 
-#include "disk.h"
+#include "storage.h"
 #include "diskSpaceManager.h"
 #include "fileAllocationTable.h"
 #include "fileAllocator.h"
@@ -27,11 +27,11 @@
  */
 class FileSystem {
 public:
-    FileSystem(Disk disk, DiskSpaceManager diskSpaceManager, FileAllocationTable fat, FileAllocator allocator, FileSystemAPI api);
+    FileSystem(Storage *disk, DiskSpaceManager diskSpaceManager, FileAllocationTable fat, FileAllocator allocator, FileSystemAPI api);
 public:
     FileSystemAPI API;
 private:
-    Disk disk;
+    Storage *disk;
     DiskSpaceManager diskSpaceManager;
     FileAllocationTable fat;
     FileAllocator allocator;
