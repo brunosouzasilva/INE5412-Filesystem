@@ -10,12 +10,12 @@
 
 namespace std {
 
-fileSystemAPI::fileSystemAPI() {
+FileSystemAPI::FileSystemAPI() {
 	// TODO Auto-generated constructor stub
 
 }
 
-fileSystemAPI::~fileSystemAPI() {
+FileSystemAPI::~FileSystemAPI() {
 	// TODO Auto-generated destructor stub
 }
 
@@ -33,10 +33,10 @@ void FileSystemAPI::mv(const char* sourcepath, const char* destpath) {
 void FileSystemAPI::remove(const char* path) {
 }
 
-fileIdentifier FileSystemAPI::createfile(const char* path, const int mode) {
+FileSystemAPI::fileIdentifier FileSystemAPI::createfile(const char* path, const int mode) {
 }
 
-fileIdentifier FileSystemAPI::openfile(const char* path, const int mode) {
+FileSystemAPI::fileIdentifier FileSystemAPI::openfile(const char* path, const int mode) {
 
 }
 
@@ -52,5 +52,5 @@ unsigned int FileSystemAPI::writefile(const fileIdentifier file, const unsigned 
 FileAttributes::fileType FileSystemAPI::getFileType(const char* path) {
 }
 
-fileSize FileSystemAPI::getFileZise(const char* path) {
+FileAttributes::fileSize FileSystemAPI::getFileSize(const char* path) {
 }
