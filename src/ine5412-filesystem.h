@@ -12,9 +12,6 @@
  */
 class INE5412Filesystem {
 public:
-
-	typedef unsigned int fileIdentifier;
-
     INE5412Filesystem();
 public:
     void useFileSystem();

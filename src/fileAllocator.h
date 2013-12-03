@@ -15,6 +15,9 @@
  */
 class FileAllocator {
 public:
+
+	typedef unsigned int fileIdentifier;
+
     FileAllocator(Storage* disk, FileAllocationTable* fat);
 public:
     void createFile();

@@ -14,6 +14,9 @@
 
 class FileAttributes {
 public:
+
+	typedef unsigned int fileSize;
+
     FileAttributes();
 public:
     enum fileType {a,d,c,b,l};

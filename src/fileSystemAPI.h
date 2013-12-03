@@ -16,6 +16,9 @@
  */
 class FileSystemAPI {
 public:
+
+	typedef unsigned int fileIdentifier;
+
     FileSystemAPI();
 public:
     // general
@@ -32,7 +35,7 @@ public:
     unsigned int writefile(const fileIdentifier file, const unsigned char numBytes, char* bufferBytes);
     // attributes
     FileAttributes::fileType getFileType(const char* path);
-    fileSize getFileZise(const char* path);
+    FileAttributes::fileSize getFileSize(const char* path);
 };
 
 #endif	/* FILESYSTEMAPI_H */

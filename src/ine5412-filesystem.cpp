@@ -6,8 +6,8 @@ INE5412Filesystem::INE5412Filesystem() {
 
 void INE5412Filesystem::useFileSystem() {
     fs.API.format();
-    fileIdentifier fread = fs.API.createfile("/readme.txt", 0);
-    fileIdentifier fboot = fs.API.createfile("/boot.dat", 0);
+    FileSystemAPI::fileIdentifier fread = fs.API.createfile("/readme.txt", 0);
+    FileSystemAPI::fileIdentifier fboot = fs.API.createfile("/boot.dat", 0);
     char* bufferBytes = malloc(sizeof(char)*5);
     int numReaded = fs.API.readfile(fread, 4, bufferBytes);
     
