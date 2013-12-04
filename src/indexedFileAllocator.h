@@ -1,24 +1,25 @@
-/* 
- * File:   indexedFileAllocator.h
- * Author: cancian
- *
- * Created on 23 November 2013, 11:36
- */
-
 #ifndef INDEXEDFILEALLOCATOR_H
-#define	INDEXEDFILEALLOCATOR_H
+#define INDEXEDFILEALLOCATOR_H
+
+#include "fileAllocator.h"
 
 /**
  * The Indexed File Allocation algorithm implementation for @class FileAllocator abstract class.
  */
-class IndexedFileAllocator: public FileAllocator {
+class IndexedFileAllocator : public FileAllocator {
 public:
-    IndexedFileAllocator();
+  IndexedFileAllocator(Storage* disk, FileAllocationTable* fat);
 public:
-    
-private:          
-            
+  void createFile() override;
+  void removeFile(const unsigned char* path) override;
+
+  fileIdentifier openFile(const unsigned char* path) override;
+  void closeFile(const fileIdentifier file) override;
+
+  unsigned int readFile(const fileIdentifier file, const unsigned int numBytes, char* bufferBytes) override;
+  unsigned int writeFile(const fileIdentifier file, const unsigned int numBytes, char* bufferBytes) override;
+
+  void seek(const unsigned long numByte) override;
 };
 
-#endif	/* INDEXEDFILEALLOCATOR_H */
-
+#endif  /* INDEXEDFILEALLOCATOR_H */
