@@ -1,25 +1,12 @@
-/*
- * fileSystemAPI.cpp
- *
- *  Created on: 03/12/2013
- *      Author: matheus
- */
-
 #include "fileSystemAPI.h"
-#include <cstdio>
-
-namespace std {
 
 FileSystemAPI::FileSystemAPI() {
 	// TODO Auto-generated constructor stub
-
 }
 
 FileSystemAPI::~FileSystemAPI() {
 	// TODO Auto-generated destructor stub
 }
-
-} /* namespace std */
 
 void FileSystemAPI::format() {
 }

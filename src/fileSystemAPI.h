@@ -1,10 +1,3 @@
-/* 
- * File:   fileSystemAPI.h
- * Author: cancian
- *
- * Created on 23 November 2013, 12:22
- */
-
 #ifndef FILESYSTEMAPI_H
 #define	FILESYSTEMAPI_H
 
@@ -16,7 +9,6 @@
  */
 class FileSystemAPI {
 public:
-
 	typedef unsigned int fileIdentifier;
 
     FileSystemAPI();
