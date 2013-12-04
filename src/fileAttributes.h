@@ -17,21 +17,32 @@ public:
 
 	typedef unsigned int fileSize;
 
-    FileAttributes();
+	FileAttributes();
 public:
-    enum fileType {a,d,c,b,l};
-    
-    char* getFilename();
-    void setFilename(char* filename);
-    fileSize getSize();
-    void setSize(unsigned long size);
-    fileType getType();
-    void setType(fileType type);
+	enum fileType {
+		a, d, c, b, l
+	};
+
+	char* getFilename();
+	void setFilename(char* filename);
+	fileSize getSize();
+	void setSize(unsigned long size);
+	fileType getType();
+	void setType(fileType type);
 private:
-    char* filename;
-    unsigned long size;
-    fileType type;
+	char* filename;
+	unsigned long size;
+	fileType type;
 };
 
+namespace std {
+
+class fileAttributes {
+public:
+	fileAttributes();
+	virtual ~fileAttributes();
+};
+
+} /* namespace std */
 #endif	/* FILEATTRIBUTES_H */
 
