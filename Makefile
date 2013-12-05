@@ -9,7 +9,7 @@ EXECUTABLE = filesystem
 TEST_CFLAGS = -ggdb
 
 TEST = a.out
-TEST_SOURCES = test_1/bitmap.cpp
+TEST_SOURCES = test/maintest.cpp
 TEST_OBJS = $(TEST_SOURCES:.cpp=.o)
 
 .PHONY: all clean
@@ -34,7 +34,7 @@ $(EXECUTABLE): $(OBJECTS)
 ./src/%.o: ./src/%.cpp
         $(CC) -c -o $@ $< $(CFLAGS)
 
-./test_1/%.o: ./test_1/%.cpp
+./test_1/%.o: ./test/%.cpp
         $(CC) -c -o $@ $< $(TEST_CFLAGS)
 
 clean: rm -f $(OBJECTS)
