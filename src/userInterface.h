@@ -18,7 +18,7 @@ private:
 
 	short int GetChoice();
 
-	bool ExecChoice (INE5412Filesystem *fs);
+	bool ExecutaPedidos (INE5412Filesystem *fs);
 
 	void PrintMenu () const;
 
@@ -32,4 +32,13 @@ public:
 
         void run (INE5412Filesystem *fs);
 
+};
+
+enum escolhas {
+	EstadoPrintMenu,
+	EstadoDelete,
+	EstadoCreate,
+	EstadoNewFile,
+	EstadoNewBlock,
+	EstadoExit
 };
