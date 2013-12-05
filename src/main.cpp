@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   main.cpp
  * Author: cancian
  *
@@ -7,16 +7,18 @@
 
 #include <cstdlib>
 #include "INE5412Filesystem.h"
+#include "UserInterface.h"
 
 using namespace std;
 
 /*
- * 
+ *
  */
 int main(int argc, char** argv) {
-    INE5412Filesystem os1 = new INE5412Filesystem();
-    os1.useFileSystem();
-    
+    UserInterface UI;
+	INE5412Filesystem *fileSys = new INE5412Filesystem();
+    // os1.useFileSystem();
+    UI.run(fileSys);
+
     return 0;
 }
-
