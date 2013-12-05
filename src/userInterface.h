@@ -16,7 +16,7 @@ private:
 
 	short int status_escolhas;
 
-	short int GetChoice();
+	short int ValidaEscolhas();
 
 	bool ExecutaPedidos (INE5412Filesystem *fs);
 
